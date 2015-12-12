@@ -119,11 +119,11 @@ namespace OZW {
 					Nan::New<String>("values").ToLocalChecked(),
 					values
 				);
-				std::string val;
+				int32 val;
 				OpenZWave::Manager::Get()->GetValueListSelection(value, &val);
 				Nan::Set(valobj,
 					Nan::New<String>("value").ToLocalChecked(),
-					Nan::New<String>(val.c_str()).ToLocalChecked()
+					Nan::New<Integer>(val)
 				);
 				break;
 			}
